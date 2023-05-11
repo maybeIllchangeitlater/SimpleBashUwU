@@ -1,7 +1,7 @@
 #include "s21_grep.h"
 
 int main(int argc, char** argv) {
-  if (argc > 2) {
+  if (argc > 2) { 
     options config = {0};
     checkflags(argc, argv, &config);
     if (!config.f && !config.e) grabpattern(argv, &config);
@@ -60,6 +60,7 @@ int checkflags(int argc, char** argv, options* config) {
     }
   }
   config->fileindex = optind;
+  if(config->v) config->o = 0;
   return status;
 }
 
